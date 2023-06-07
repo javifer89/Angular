@@ -25,7 +25,4 @@ this.series.push({
 })
   }
 
-  addStyles(){
-    
-  }
 }

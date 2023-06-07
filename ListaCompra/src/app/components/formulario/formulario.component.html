@@ -1,0 +1,25 @@
+<div class="formulario">
+    <div class="mb-3">
+        <label class="form-label">Nombre</label>
+        <input type="text" class="form-control" [(ngModel)]="producto.nombre">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Precio</label>
+        <input type="number" class="form-control" [(ngModel)]="producto.precio">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Unidades</label>
+        <input type="number" class="form-control" [(ngModel)]="producto.unidades">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Departamento</label>
+        <select class="form-select" [(ngModel)]="producto.departamento">
+            <option value="panaderia">Panadería</option>
+            <option value="pescaderia">Pescadería</option>
+            <option value="carniceria">Carnicería</option>
+            <option value="hogar">Hogar</option>
+        </select>
+    </div>
+    <button class="btn btn-info" (click)="envioFormulario()">Enviar</button>
+</div>
+{{ producto | json }}
