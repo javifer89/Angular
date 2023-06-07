@@ -1,0 +1,18 @@
+<p [ngStyle]="estilosParrafo">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus qui, non labore architecto, adipisci reprehenderit soluta saepe, similique earum maiores laudantium suscipit. Sit eos dignissimos voluptates est laboriosam deserunt doloremque.
+</p>
+
+<div class="botones">
+<button (click)="cambiarColor('green')">Cambiar a Verde</button>
+<button (click)="cambiarColor('blue')">Cambiar a Azul</button>
+<button (click)="cambiarColor('red')">Cambiar a Rojo</button>
+</div>
+
+<div>
+<input type="text" [(ngModel)]="estilosParrafo.backgroundColor" >
+</div>
+
+<input type="range" name="slider" id="" (change)="onChange($event)"> <!--CHANGE cambia cuando soltamos la bolita del range-->
+<input type="range" name="slider" id="" (input)="onChange($event)"> <!--INPUT cambia en función de donde movamos la bolita del range -->
+
+<input type="number" (input)="changePadding($event)"><!--INPUT cambia cuando modificamos el valor-->
+<input type="number" (change)="changePadding($event)"><!--CHANGE cambia cuando modificamos el valor y le damos enter o soltamos la flecha pulsada-->

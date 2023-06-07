@@ -1,0 +1,47 @@
+
+<button (click)="addSerie()">Agregar Los Serrano</button>
+
+<div class="series">
+
+    <div class="serie" *ngFor="let serie of series">
+        <h2> {{serie.title}}</h2>
+        <div [ngStyle]="{backgroundImage:'url('+serie.image+')',
+                        height:'300px',
+                        backgroundSize: 'cover'}" ></div>
+        <!-- <img [src]="serie.image" alt=""> -->
+        <p>{{serie.creator}}</p>
+        <p>{{serie.channel}}</p>
+    </div>
+</div>
+
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Indice</th>
+        <th>Titulo</th>
+        <th>Creador</th>
+        <th>Fecha</th>
+        <th>Rating</th>
+        <th>Canal</th>
+        <th>Primera</th>
+        <th>Ultima</th>
+        <th>Par</th>
+        <th>Impar</th>
+    </tr>
+</thead>
+    <tbody>
+        <tr *ngFor="let serie of series; let indice= index; let primera= first; let ultima = last; let par = even; let impar = odd;">
+            <td>{{indice+1}}</td>
+            <td> {{serie.title}}</td>
+            <td>{{serie.creator}}</td>
+            <td>{{serie.dates}}</td>
+            <td>{{serie.rating}}</td>
+            <td>{{serie.channel}}</td>
+            <td>{{first}}</td>
+            <td>{{last}}</td>
+            <td>{{even}}</td>
+            <td>{{odd}}</td>
+        </tr>
+    </tbody>
+</table>

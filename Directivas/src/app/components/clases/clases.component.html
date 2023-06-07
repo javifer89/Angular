@@ -1,0 +1,9 @@
+<div [ngClass]="{
+    cuadrado: (figura === 'cuad'),
+    circulo: (figura === 'circ'),
+    rectangulo: (figura === 'rect'),
+}"> </div>
+
+<button (click)="changeClass('rect')">Cambia a rectangulo</button>
+<button (click)="changeClass('cuad')">Cambia a cuadrado</button>
+<button (click)="changeClass('circ')">Cambia a circulo</button>
