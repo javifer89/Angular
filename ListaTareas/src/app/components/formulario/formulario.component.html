@@ -1,0 +1,30 @@
+<div class="formulario">
+  <div class="row">
+    <div class="col-12 col-md-6 d-flex flex-column justify-content-around">
+      <div class="mb-3">
+        <label class="form-label">Título</label>
+        <input type="text" class="form-control" [(ngModel)]="newTask.title" />
+      </div>
+    </div>
+      <div class="mb-3 col-12 col-md-6">
+        <label class="form-label">Prioridad</label>
+        <select class="form-select" [(ngModel)]="newTask.priority">
+          <option value="mensual">Mensual</option>
+          <option value="diaria">Diaria</option>
+          <option value="urgente">Urgente</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 d-flex flex-column justify-content-around">
+      <div class="mb-3">
+        <label class="form-label">Texto</label>
+        <!-- <input type="text" class="form-control"> -->
+        <textarea
+          class="form-control"
+          rows="4"
+          [(ngModel)]="newTask.text"
+        ></textarea>
+      </div>
+    </div>
+    <button class="btn btn-info" (click)="onClick()">Enviar</button>
+  </div>

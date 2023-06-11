@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { Producto } from '../../interfaces/producto.interface';
 
 @Component({
   selector: 'formulario',
@@ -7,12 +8,22 @@ import { Component } from '@angular/core';
 })
 export class FormularioComponent {
 
-  producto: any;
-  constructor(){
-    this.producto = {};
+  producto: Producto;
+
+  @Output() nuevoProducto: EventEmitter<Producto>;
+
+  constructor() {
+    this.producto = {
+      nombre: '', precio: 0, unidades: 0, departamento: ''
+    };
+    this.nuevoProducto = new EventEmitter();
   }
 
-  envioFormulario(){
-    console.log(this.producto);
+  envioFormulario() {
+    this.nuevoProducto.emit(this.producto);
+    this.producto = {
+      nombre: '', precio: 0, unidades: 0, departamento: ''
+    };
   }
+
 }

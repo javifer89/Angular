@@ -1,0 +1,21 @@
+<div class="lista">
+    <h3>{{title}}</h3>
+
+<!-- ESTRUCTURA PARA PINTAR 1 TAREA, A LA QUE LE APLICAMOS ngFor PARA QUE PINTE TANTAS COMO HAYAN EN EL ARRAY -->
+    <div class="tareas">
+        <div class="tarea" *ngFor="let task of tasks; let indice=index">
+            <div class="row">
+                <div class="col-9">
+                <h4>{{task.title}}</h4>
+                <p>{{task.text}}</p>
+                <p>{{task.priority}}</p>
+                <button class="btn btn-success" (click)="onClick(indice)"> Completar/Pendiente</button>
+            </div>
+                <div class="col-3" >
+                    <img src="assets/images/urgente.png" *ngIf="task.priority ==='urgente'">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

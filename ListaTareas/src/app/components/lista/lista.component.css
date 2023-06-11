@@ -1,0 +1,19 @@
+.tareas{
+    display:flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tarea{
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 1px solid dodgerblue;
+    justify-content: space-between;
+}
+
+
+.tarea img{
+    width: 10%;
+    display: block;
+    height: auto;
+}

@@ -1,1 +1,36 @@
-<formulario></formulario>
+<div class="container">
+    <h1 class="my-5">Lista de la compra</h1>
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <formulario (nuevoProducto)="onNuevoProducto($event)"></formulario>
+      </div>
+      <div class="col-12 col-md-8">
+        <lista-productos [productos]="arrProductos"></lista-productos>
+      </div>
+    </div>
+  </div>
+
+  <lista-productos [productos]="[{ nombre: 'detergente', precio: 23, unidades: 2, departamento: 'hogar'}, { nombre: 'pan', precio: 23, unidades: 2, departamento: 'panaderia'}]"></lista-productos>
+
+
+
+  <!-- MAQUETACIÓN MODELO -->
+
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-4">
+        UNO
+      </div>
+      <div class="col-12 col-md-8">
+        DOS
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-3">TRES</div>
+      <div class="col-12 col-md-3">CUATRO</div>
+      <div class="col-12 col-md-3">
+        <formulario (nuevoProducto)="onNuevoProducto($event)"></formulario>
+      </div>
+      <div class="col-12 col-md-3"><lista-productos [productos]="arrProductos"></lista-productos></div>
+    </div>
+  </div> -->

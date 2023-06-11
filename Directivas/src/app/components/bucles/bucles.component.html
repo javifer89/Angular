@@ -31,7 +31,7 @@
     </tr>
 </thead>
     <tbody>
-        <tr *ngFor="let serie of series; let indice= index; let primera= first; let ultima = last; let par = even; let impar = odd;">
+        <tr *ngFor="let serie of series; let indice= index; let primera= first; let ultima = last; let par = even; let impar = odd" [ngClass]="{'fila-par': par, 'fila-impar': !par}">
             <td>{{indice+1}}</td>
             <td> {{serie.title}}</td>
             <td>{{serie.creator}}</td>

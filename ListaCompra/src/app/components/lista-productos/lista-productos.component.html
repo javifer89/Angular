@@ -1,0 +1,19 @@
+<!--
+    1. Maquetamos cómo queremos que se muestre un único producto
+    2. Aplicamos sobre ese producto el *ngFor que nos permita repetirlo
+ -->
+ <div class="row">
+    <div class="col-6" *ngFor="let producto of productos; let indice = index;">
+        <div class="row producto">
+            <div class="col-12 col-md-3 imagen">
+                <img [src]="'assets/images/'+producto.departamento+'.png'" alt="">
+            </div>
+            <div class="col-12 col-md-9 contenido">
+                <h3>{{producto.nombre}}</h3>
+                <p>{{producto.precio}}€ X {{producto.unidades}}</p>
+                <p>{{producto.departamento}}</p>
+                <button class="btn btn-danger" (click)="borrarProducto(indice)">Borrar</button>
+            </div>
+        </div>
+    </div>
+</div>

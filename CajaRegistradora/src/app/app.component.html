@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-8">
+      <div class="row">
+        <lista-productos
+          titulo="COMIDA"
+          [productos]="arrComida" (productSelected)="facturaCompra($event)"
+        ></lista-productos>
+      </div>
+      <div class="row">
+        <lista-productos
+          titulo="BEBIDA"
+          [productos]="arrBebida" (productSelected)="facturaCompra($event)"
+        ></lista-productos>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-4"></div>
+
+    <div class="lista-productos"></div>
+  </div>
+</div>

@@ -11,3 +11,13 @@
     border-radius: 20px;
     padding: 20px;
 }
+td {
+    background-color: transparent;
+}
+.fila-par{
+    background-color: lightblue;
+}
+
+.fila-impar{
+    background-color: lightgray;
+}
