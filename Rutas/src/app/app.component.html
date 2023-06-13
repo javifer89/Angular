@@ -1,0 +1,26 @@
+<nav>
+  <ul>
+    <!-- <li>
+      <a href="/home">Home</a>
+    </li>
+    UTILIZAMOS ROUTERLINK PARA NO REFRESCAR LA PÁGINA EN CADA NAVEGACIÓN (HREF)-->
+    <li [routerLink]="['/home']">Home</li>
+    <li [routerLink]="['/info']">Info</li>
+    <li [routerLink]="['/about']">About</li>
+    <li [routerLink]="['/contact']">Contact</li>
+  </ul>
+</nav>
+
+<!-- cambiarRuta (ruta donde vamos a navegar) -->
+ <button (click)="cambiarRuta('/home')">Home</button>
+ <button (click)="cambiarRuta('/info')">Info</button>
+ <button (click)="cambiarRuta('/about')">About</button>
+ <button (click)="cambiarRuta('/contact')">Contacto</button>
+
+<router-outlet></router-outlet>
+
+
+<!-- /productos/PRODUCTOID -ProductoComponent
+
+
+/TITULOPROD/dp/IDPRODUCTO -->

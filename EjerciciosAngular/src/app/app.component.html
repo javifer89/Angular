@@ -1,0 +1,27 @@
+
+<!-- <header>
+<nav-bar (opcionPulsada)="onOpcionPulsada($event)" colorFondo="red" colorEnlace="blue"></nav-bar>
+<nav-bar (opcionPulsada)="onOpcionPulsada($event)" colorFondo="blue" colorEnlace="white"></nav-bar>
+<nav-bar (opcionPulsada)="onOpcionPulsada($event)" colorFondo="green" colorEnlace="black"></nav-bar>
+<nav-bar (opcionPulsada)="onOpcionPulsada($event)" colorFondo="black" colorEnlace="white"></nav-bar>
+</header> -->
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<nav-bar colorFondo="yellow" colorEnlace="white" (opcionSeleccionada)="onOpcionSeleccionada($event)"></nav-bar>
+
+<nav-bar colorFondo="green" colorTexto="dodgerblue" [opciones]="['opcion1', 'opcion2', 'opcion3']" (opcionSeleccionada)="onOpcionSeleccionada($event)"></nav-bar>
+
+<nav-bar colorFondo="blue" colorTexto="goldenrod" [opciones]="['perro', 'gato', 'mariposa', 'ligre', 'hamster']" (opcionSeleccionada)="onOpcionSeleccionada($event)"></nav-bar>
+
+<tab-bar>
+  <!-- Versión mia <ul>
+  <li *appTabContent="'Stats'" [appTabActive]="activeTab === 0">Stats</li>
+  <li *appTabContent="'Calendar'" [appTabActive]="activeTab === 1">Calendar</li>
+  <li *appTabContent="'Documentation'" [appTabActive]="activeTab === 2">Documentation</li>
+  <li *appTabContent="'Support'" [appTabActive]="activeTab === 3">Support</li>
+  <li *appTabContent="'Social'" [appTabActive]="activeTab === 4">Social</li>
+</ul> -->
+</tab-bar>

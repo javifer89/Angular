@@ -1,0 +1,23 @@
+<!-- Opción mia
+   <ul class="tab-bar">
+    <li *ngFor="let tab of tabs; let i = index" [class.active]="activeTab === i" (click)="selectTab(i)">
+      {{ tab }}
+    </li>
+  </ul>
+  <ng-content></ng-content> -->
+
+  <ul>
+    <li [ngClass]="{active: opcionSeleccionada==='stats'}" (click)="cambiarSelección('stats')">Stats</li>
+    <li [ngClass]="{active: opcionSeleccionada==='calendar'}" (click)="cambiarSelección('calendar')">Calendar</li>
+    <li [ngClass]="{active: opcionSeleccionada==='documentation'}" (click)="cambiarSelección('documentation')">Documentation</li>
+    <li [ngClass]="{active: opcionSeleccionada==='support'}" (click)="cambiarSelección('support')">Support</li>
+    <li [ngClass]="{active: opcionSeleccionada==='social'}" (click)="cambiarSelección('social')">Social</li>
+  </ul>
+  
+<div>
+  <p *ngIf="opcionSeleccionada === 'stats'">STATS</p>
+  <p *ngIf="opcionSeleccionada === 'calendar'">CALENDAR</p>
+  <p *ngIf="opcionSeleccionada === 'documentation'">DOCUMENTATION</p>
+  <p *ngIf="opcionSeleccionada === 'support'">SUPPORT</p>
+  <p *ngIf="opcionSeleccionada === 'social'">SOCIAL</p>
+</div>

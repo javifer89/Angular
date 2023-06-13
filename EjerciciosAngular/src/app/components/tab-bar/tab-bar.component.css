@@ -1,0 +1,17 @@
+.tab-bar {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .tab-bar li {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+  }
+
+  .tab-bar li.active {
+    background-color: dodgerblue;
+    color: white;
+  }

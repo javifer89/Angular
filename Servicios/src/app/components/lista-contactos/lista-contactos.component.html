@@ -1,0 +1,12 @@
+<button (click)="onClickVisibles()">Mostrar Visibles</button>
+<button (click)="onClickAllContacts()">Mostrar todos los contactos</button>
+<input type="range" (input)="onFilterByAge" min="18" max="65">
+<div class="contactos">
+    <div class="contacto" *ngFor="let contacto of contactos; let indice = index">
+        <h3>{{contacto.nombre}} {{contacto.apellidos}}</h3>
+        <p>Email: {{contacto.email}}</p>
+        <p>Teléfono: {{contacto.telefono}}</p>
+        <p>Edad: {{contacto.edad}}</p>
+        <button (click)="onDeleteContact(indice)">Borrar contacto</button>
+    </div>
+</div>

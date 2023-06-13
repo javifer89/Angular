@@ -1,0 +1,27 @@
+<div>
+    <div>
+        <label>Nombre</label>
+        <input type="text" [(ngModel)]="nuevoContacto.nombre">
+    </div>
+    <div>
+        <label>Apellidos</label>
+        <input type="text" [(ngModel)]="nuevoContacto.apellidos">
+    </div>
+    <div>
+        <label>Email</label>
+        <input type="text" [(ngModel)]="nuevoContacto.email">
+    </div>
+    <div>
+        <label>Teléfono</label>
+        <input type="text" [(ngModel)]="nuevoContacto.telefono">
+    </div>
+    <div>
+        <label>Edad</label>
+        <input type="text" [(ngModel)]="nuevoContacto.edad">
+    </div>
+    <div>
+        <label>Visible</label>
+        <input type="checkbox" [(ngModel)]="nuevoContacto.visible">
+    </div>
+    <input type="submit" value="Enviar" (click)="onClick()">
+</div>
