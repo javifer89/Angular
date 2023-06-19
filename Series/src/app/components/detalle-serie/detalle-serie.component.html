@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6 col-md-4 serie" *ngIf="serie">
+            <h3>{{serie.titulo}}</h3>
+            <img [src]="serie.imagen" alt="">
+            <p>{{serie.creador}}</p>
+            <p>{{serie.canal}}</p>
+        </div>
+        <div *ngIf="!serie">
+            <p>La serie no existe</p>
+        </div>
+
+        <div class="personajes">
+            <div class="col-6 col-md-4 serie personaje" *ngFor="let personaje of personajes">
+                <h3>{{personaje.nombre_real}}</h3>
+                <h5>{{personaje.nombre_personaje}}</h5>
+                <img [src]="personaje.imagen" alt="">
+                <p> Episodios: {{personaje.episodios}}</p>
+            </div>
+        </div>
+    </div>
+</div>

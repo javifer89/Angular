@@ -6,7 +6,7 @@ import { SERIE } from '../interfaces/serie.interface';
   providedIn: 'root',
 })
 export class ServicioSeriesService {
-  SERIES: SERIE[] = [];
+  // SERIES: SERIE[] = [];
 
   getAll(): SERIE[] {
     return SERIES;
@@ -16,11 +16,7 @@ export class ServicioSeriesService {
     SERIES.push(nuevaSerie);
   }
 
-  // deleteSerie(indice: number) {
-  //   SERIES.splice(indice, 1);
-  // }
-
-  getChannel(): string[] {
+    getChannel(): string[] {
     const arr: string[] = [];
     for (let serie of SERIES) {
       if (!arr.includes(serie.canal)) {
@@ -40,23 +36,35 @@ export class ServicioSeriesService {
   //   return final;
   // }
 
-// REFACTORIZADA
-// getCanalesV2(): string[] {
-//     return [...new Set(SERIES.map(serie => serie.canal))];
-//   }
+  // REFACTORIZADA
+  // getCanalesV2(): string[] {
+  //     return [...new Set(SERIES.map(serie => serie.canal))];
+  //   }
 
 
 
 
-// mostrar los canales recuperados en un select dentro del html
-// cuando cambie el select, filtramos las series por canal
-filterByChannel() {
-  const serieFiltrada: string[] = [];
-  for (let serie of SERIES) {
-    SERIES.filter(canal)
+  // mostrar los canales recuperados en un select dentro del html
+  // cuando cambie el select, filtramos las series por canal
+  filterByChannel(canal: string) : SERIE[] {
+    return SERIES.filter(serie => serie.canal === canal)
   }
-  return arr.filter((serie) => serie.canal);
-}
 
+
+
+  //Necsito un método que me devuelva los datos de una única serie - ServicioSeries
+  getById(id: number): SERIE {
+    let serieSeleccionada: any;
+    for (let serie of SERIES) {
+      if (serie.id === id) {
+        serieSeleccionada = serie;
+      }
+    }
+    return serieSeleccionada;
+  }
+
+  getById2(id: number): SERIE | undefined {
+    return SERIES.find(serie => serie.id === id)
+  }
 
 }

@@ -8,34 +8,28 @@ import { ServicioSeriesService } from 'src/app/services/servicio-series.service'
   styleUrls: ['./lista-series.component.css']
 })
 export class ListaSeriesComponent {
+
   ServicioSeriesService = inject(ServicioSeriesService)
 
   series: SERIE[];
+  canales: string[];
 
   constructor() {
-    this.series = []
+    this.series = [];
+    this.canales = [];
   }
 
   ngOnInit() {
     this.series = this.ServicioSeriesService.getAll()
-    const canales = this.ServicioSeriesService.getChannel()
-    return canales
+    this.canales = this.ServicioSeriesService.getChannel()
   }
 
-
-
-onGetChannel(){
-  this.series = this.ServicioSeriesService.getChannel();
-}
-}
+  // onGetChannel() {
+  //   this.series = this.ServicioSeriesService.getChannel();
+  // }
 
 onFilterByChannel($event: any) {
- this.series = this.ServicioSeriesService.filterByChannel($event.target.value)
+  this.series = this.ServicioSeriesService.filterByChannel($event.target.value)
 }
 
-
-
-
-//  onDeleteSerie(indice: number){
-//   this.series = this.ServicioSeriesService.deleteSerie(indice)
-//  }
+}

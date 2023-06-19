@@ -1,0 +1,12 @@
+  <div class="productos">
+    <div class="producto" *ngFor="let producto of arrProductos" [ngClass]="{activo: producto.active , inactivo: !producto.active}">
+      <h3>{{ producto.name }}</h3>
+      <p>{{ producto.description }}</p>
+      <p>{{ producto.price }} €</p>
+      <p>{{producto.category}}</p>
+      <img [src]="producto.image" />
+    </div>
+    <button (click)="cambiarPagina(false)" *ngIf="paginaActual !== 1">Anterior</button>
+    <p>{{paginaActual}}</p>
+    <button (click)="cambiarPagina(true)" *ngIf="paginaActual !== numPaginas">Siguiente</button>
+  </div>

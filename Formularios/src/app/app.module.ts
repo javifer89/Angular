@@ -3,18 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ListaSeriesComponent } from './components/lista-series/lista-series.component';
-import { DetalleSerieComponent } from './components/detalle-serie/detalle-serie.component';
+import { ModelComponent } from './components/model/model.component';
+import { TemplateComponent } from './components/template/template.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListaSeriesComponent,
-    DetalleSerieComponent
+    ModelComponent,
+    TemplateComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

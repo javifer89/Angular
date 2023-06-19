@@ -1,4 +1,7 @@
 
+<select  (change)="onFilterByChannel($event)" >
+    <option value="canal" *ngFor="let canal of canales">{{canal}}</option>
+</select>
 <div class="row">
     <div id="serie"class="col-12 col-md-4 p-3" *ngFor="let serie of series; let indice = index">
         <h3>{{serie.titulo}} </h3>
@@ -9,16 +12,7 @@
         <div class="imagen">
             <img [src]="serie.imagen" alt="">
         </div>
-        <!-- <button (click)="onDeleteSerie(indice)">Borrar serie</button> -->
+        <button [routerLink]="['/series', serie.id]">Ver detalle</button>
     </div>
 
-    <select name="channels" id="channels" >
-        <option value="" *ngFor="let canal of canales">--Please choose an option--</option>
-        <option value="HBO">HBO</option>
-        <option value="Disney+">Disney+</option>
-        <option value="Prime Video">Prime Video</option>
-        <option value="Netflix">Netflix</option>
-        <option value="AMC">AMC</option>
-        <option value="BBC">BBC</option>
-    </select>
 </div>

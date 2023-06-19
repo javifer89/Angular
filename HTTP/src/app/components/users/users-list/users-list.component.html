@@ -1,0 +1,13 @@
+<div class="users">
+    <div class="user" *ngFor="let user of arrUsers">
+      <h3>{{ user.username }}</h3>
+      <p>{{ user.first_name }} {{ user.last_name }}</p>
+      <p>Email: {{user.email}}</p>
+      <p>ID: {{user.id}}</p>
+      <img [src]="user.image" alt="">
+
+    </div>
+    <button (click)="cambiarPagina(false)" *ngIf="paginaActual !== 1">Anterior</button>
+    <p>{{paginaActual}}</p>
+    <button (click)="cambiarPagina(true)" *ngIf="paginaActual !== numPaginas">Siguiente</button>
+  </div>

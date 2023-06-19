@@ -1,0 +1,95 @@
+<!-- nombre, apellidos, edad, email, direccion, dni, password, repite_password -->
+<div>
+  <p>Formulario valid: {{ formulario.valid }}</p>
+  <p>Campo nombre valid?: {{ formulario.get("nombre")?.valid }}</p>
+  <p>Campo nombre dirty?: {{ formulario.get("nombre")?.dirty }}</p>
+  <p>Campo nombre value?: {{ formulario.get("nombre")?.value }}</p>
+  <p>Errores nombre: {{ formulario.get("nombre")?.hasError("required") }}</p>
+  <p>Errores nombre: {{ formulario.get("nombre")?.errors | json }}</p>
+  <!--si no tiene errores será nulo, si tiene errores devolverá un objeto-->
+  <p>Errores direccion: {{ formulario.get("direccion")?.errors | json }}</p>
+  <p>
+    Errores direccion maxlength:
+    {{ formulario.get("direccion")?.hasError("maxlength") }}
+  </p>
+  <!-- <p>Errores DNI: {{formulario.get('dni')?.errors | json}}</p> -->
+</div>
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label class="form-label">Nombre</label>
+    <input type="text" class="form-control" formControlName="nombre" />
+    <p class="error" *ngIf="checkError('nombre', 'required')">
+      El nombre es obligatorio
+    </p>
+    <p class="error" *ngIf="checkError('nombre', 'maxlength')">
+      El nombre no puede tener más de 18 caracteres
+    </p>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Apellidos</label>
+    <input type="text" class="form-control" formControlName="apellidos" />
+    <p class="error" *ngIf="checkError('apellidos', 'required')">
+      Los apellidos son obligatorios
+    </p>
+    <p class="error" *ngIf="checkError('apellidos', 'maxlength')">
+      Los apellidos no pueden tener más de 18 caracteres
+    </p>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">EDAD</label>
+    <input type="number" class="form-control" formControlName="edad" />
+  </div>
+  <div class="mb-3">
+    <p>VALOR EMAIL: {{emailValue}}</p>
+    <label class="form-label">Email</label>
+    <input type="email" class="form-control" formControlName="email" />
+    <p class="error" *ngIf="checkError('direccion', 'required')">
+      La dirección email es obligatoria.
+    </p>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Direccion</label>
+    <input type="text" class="form-control" formControlName="direccion" />
+    <p class="error" *ngIf="checkError('direccion', 'required')">
+      La dirección es obligatoria.
+    </p>
+    <p class="error" *ngIf="checkError('direccion', 'maxlength')">
+      La dirección no puede tener más de 15 caracteres.
+    </p>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">DNI</label>
+    <input type="text" class="form-control" formControlName="dni" />
+    <p class="error" *ngIf="checkError('dni', 'dnivalidator')">
+      El DNI es erróneo
+    </p>
+
+  </div>
+  <div class="mb-3">
+    <label class="form-label">PASSWORD</label>
+    <input type="password" class="form-control" formControlName="password" />
+    <p class="error" *ngIf="checkError('password', 'required')">
+      La contraseña es obligatoria
+    </p>
+    <p class="error" *ngIf="checkError('password', 'pattern')">
+      La contraseña no puede tener esos caracteres
+    </p>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">REPITE PASSWORD</label>
+    <input
+      type="password"
+      class="form-control"
+      formControlName="repite_password"
+    />
+    <p class="error" *ngIf="checkError('repite_password', 'passwordvalidator')">
+     Las contraseñas no coinciden
+    </p>
+  </div>
+  <input
+    type="submit"
+    value="Enviar"
+    class="btn btn-info"
+    [disabled]="!formulario.valid"
+  />
+</form>

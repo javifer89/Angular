@@ -1,0 +1,8 @@
+<div class="respuestas">
+
+    <div class="respuesta" *ngFor="let respuesta of respuestas">
+        <ul class="respuestas">
+            <li (click)="respuestaSeleccionada(respuesta)">{{respuesta}}</li>
+        </ul>
+    </div>
+</div>

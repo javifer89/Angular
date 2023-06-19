@@ -1,0 +1,37 @@
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.productos {
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+    flex-wrap: wrap
+}
+
+.producto {
+    max-width: 200px;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+
+.producto img {
+    width: 200px;
+}
+
+.activo {
+    background-color: lightgreen;
+}
+.inactivo{
+    background-color: tomato;
+}
+
+.productos button {
+width: 100px;
+height: 100px;
+
+}

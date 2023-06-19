@@ -1,0 +1,5 @@
+<div *ngIf="preguntaActual">
+<preguntas [texto]="preguntaActual.texto"></preguntas>
+
+<lista-respuestas [respuestas]="preguntaActual.respuestas" (enviarRespuesta)="onRespuestaSeleccionada($event)"></lista-respuestas>
+</div>
