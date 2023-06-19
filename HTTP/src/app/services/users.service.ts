@@ -36,4 +36,10 @@ export class UsersService {
       this.httpClient.put<any>(`${this.baseUrl}/${userId}`, formValue)
     );
   }
+  deleteUser(userId: string) {
+    return firstValueFrom(
+      this.httpClient.delete(`${this.baseUrl}/${userId}`)
+    );
+  }
 }
+//cuando pulse el boton eliminar de la lista de usuarios, llamo al método deleteById del servicio pasándole el id del usuario

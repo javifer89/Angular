@@ -67,4 +67,6 @@ export class EditUserComponent {
     const response = await this.usersService.update(this.userId, this.formulario.value);
     console.log(response);
   }
+
+
 }

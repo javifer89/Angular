@@ -3,10 +3,11 @@
       <h3>{{ user.username }}</h3>
       <p>{{ user.first_name }} {{ user.last_name }}</p>
       <p>Email: {{user.email}}</p>
-      <p>ID: {{user.id}}</p>
+      <p>ID: {{user._id}}</p>
       <img [src]="user.image" alt="">
-
-    </div>
+      <button class=" btn btn-info" [routerLink]="['/users', 'edit', user._id]">Editar</button>
+      <button class="btn btn-error" (click)="onDeleteUser(user._id)" >Eliminar</button>
+</div>
     <button (click)="cambiarPagina(false)" *ngIf="paginaActual !== 1">Anterior</button>
     <p>{{paginaActual}}</p>
     <button (click)="cambiarPagina(true)" *ngIf="paginaActual !== numPaginas">Siguiente</button>

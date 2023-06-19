@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -19,7 +20,7 @@ export class UsersListComponent {
     this.numPaginas = 0;
   }
   ngOnInit() {
-    this.cargarUsers()
+    this.cargarUsers();
   }
 
   async cargarUsers() {
@@ -40,5 +41,10 @@ export class UsersListComponent {
       this.paginaActual--;
     }
     this.cargarUsers();
+  }
+  
+  async onDeleteUser(userId: string) {
+    const response = await this.usersService.deleteUser(userId);
+    console.log(response);
   }
 }
