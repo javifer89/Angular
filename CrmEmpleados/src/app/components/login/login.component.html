@@ -1,0 +1,12 @@
+<h2>Confirmar usuario</h2>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+   <div class="mb-3">
+      <label for="" class="form-label">Email:</label>
+      <input type="text" class="form-control" formControlName="email" />
+    </div>
+    <div class="mb-3">
+      <label for="" class="form-label">Password:</label>
+      <input type="password" class="form-control" formControlName="password" />
+    </div>
+  <input id="enviar" type="submit" value="Enviar" />
+</form>

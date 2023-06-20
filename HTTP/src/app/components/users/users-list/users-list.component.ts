@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -42,7 +41,7 @@ export class UsersListComponent {
     }
     this.cargarUsers();
   }
-  
+
   async onDeleteUser(userId: string) {
     const response = await this.usersService.deleteUser(userId);
     console.log(response);

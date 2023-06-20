@@ -1,0 +1,45 @@
+<h2>Editar empleado</h2>
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="" class="form-label">Nombre:</label>
+    <input type="text" class="form-control" formControlName="nombre" />
+  </div>
+
+  <div class="mb-3">
+    <label for="" class="form-label">Apellidos:</label>
+    <input type="text" class="form-control" formControlName="apellidos" />
+  </div>
+
+  <div class="mb-3">
+    <label for="" class="form-label">Email:</label>
+    <input type="text" class="form-control" formControlName="email" />
+  </div>
+
+  <div class="mb-3">
+    <label for="" class="form-label">Telefono:</label>
+    <input type="text" class="form-control" formControlName="telefono" />
+  </div>
+
+  <div class="mb-3 col-12 col-md-6">
+    <label class="form-label">Departamento</label>
+    <select class="form-select" formControlName="departamento">
+      <option value="direccion">Dirección</option>
+      <option value="diseño">Diseño</option>
+      <option value="recursoshumanos">Recursos humanos</option>
+      <option value="desarrollo">Desarrollo</option>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label for="" class="form-label">Salario:</label>
+    <input type="number" class="form-control" formControlName="salario" />
+  </div>
+
+  <input id="enviar" type="submit" value="Enviar" />
+</form>
+
+<div class="errores">
+  <p *ngFor="let error of errores">
+    {{ error.field }}
+  </p>
+</div>

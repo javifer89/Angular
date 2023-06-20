@@ -1,0 +1,13 @@
+
+<h2>Empleados ID-Bootcamp</h2>
+<div class="empleados">
+    <div class="empleado" *ngFor="let empleado of arrEmpleados">
+        <h3>Nombre:{{ empleado.nombre }} {{ empleado.apellidos }}</h3>
+        <p>Email:{{ empleado.email }}</p>
+        <p>Telefono:{{ empleado.telefono }}</p>
+        <p>Departamento:{{ empleado.departamento }}</p>
+        <p>Salario:{{ empleado.salario }}</p>
+        <button class="btn" [routerLink]="['/empleados','edit', empleado._id]">Editar Empleado</button>
+        <button class="btn" (click)="onDeleteEmpleado(empleado._id)">Eliminar Empleado</button>
+    </div>
+</div>
