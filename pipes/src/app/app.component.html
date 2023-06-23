@@ -1,0 +1,19 @@
+<p>{{ precio | currency: 'EUR':'code' }}</p>  <!--con 'code' redondearia el precio-->
+
+<p>{{mensaje | lowercase}}</p>
+<p> {{ mensaje | uppercase}}</p>
+<p>{{ mensaje.toUpperCase()}}</p>
+<p> {{ mensaje | titlecase}}</p>
+
+<p> {{ fechaActual | date: 'dd/MM/yyyy HH:mm.ss'}}</p> <!-- consultar documentación de angular pipes para ver las opciones del pipe DATE-->
+
+<p>{{ numero}}</p>
+<p> {{numero | number: '1.1-2'}}</p> <!-- limitar decimales-->
+
+<p> REVERSE {{ mensaje | reverse}}</p>
+
+<!-- <div class="series">
+<div class="serie"*ngFor="let serie of seriesProm | async ">
+  <h3>{{serie.title}}</h3>
+</div>
+</div> -->

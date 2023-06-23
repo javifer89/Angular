@@ -1,0 +1,5 @@
+<h4>Mi mapa con banderitas</h4>
+<google-map width="100vw" height="100vw" [center]="center" [zoom]="zoom" [mapTypeId]="mapTypeId" >
+    <map-marker *ngIf="myPosition" [position]="myPosition" [options]="markerOptions"></map-marker>
+    <map-marker *ngFor="let pais of arrPaises" [position]="pais.position" [options]="pais.options"></map-marker>
+</google-map>

@@ -1,0 +1,8 @@
+.mapa {
+    width: 50em;
+    height: 50em;
+}
+input[type="text"]{
+    height: 50px;
+    width: 180px;
+}
